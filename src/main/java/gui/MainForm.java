@@ -15,6 +15,13 @@ public class MainForm extends javax.swing.JFrame {
 	public MainForm() {
 		initComponents();
 	}
+	
+	public void prijavaNaCas(int razred, int lekcija) {
+		CasForm frmCas = new CasForm();
+		frmCas.setVisible(true);
+		frmCas.selektujLekciju(razred, lekcija);
+		setVisible(false);
+	}
 
 	/**
 	 * This method is called from within the constructor to initialize the form.
@@ -25,21 +32,57 @@ public class MainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnCas = new javax.swing.JButton();
+        btnKviz = new javax.swing.JButton();
+        btnKontrolni = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ЧАС");
+
+        btnCas.setText("ЧАС");
+        btnCas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCasActionPerformed(evt);
+            }
+        });
+
+        btnKviz.setText("КВИЗ");
+
+        btnKontrolni.setText("КОНТРОЛНИ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnKontrolni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnKviz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnCas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKviz)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKontrolni)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleName("MainForm");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCasActionPerformed
+		PrijavaCasDialog dlgPrijavaCas = new PrijavaCasDialog(this, true);
+		dlgPrijavaCas.setVisible(true);
+    }//GEN-LAST:event_btnCasActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -73,5 +116,8 @@ public class MainForm extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCas;
+    private javax.swing.JButton btnKontrolni;
+    private javax.swing.JButton btnKviz;
     // End of variables declaration//GEN-END:variables
 }

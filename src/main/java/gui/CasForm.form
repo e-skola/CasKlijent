@@ -5,9 +5,6 @@
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="&#x427;&#x410;&#x421;"/>
   </Properties>
-  <AccessibilityProperties>
-    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="MainForm"/>
-  </AccessibilityProperties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -29,47 +26,52 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnKontrolni" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnKviz" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnCas" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="522" max="32767" attributes="0"/>
+                      <Component id="btnPrethodni" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnSledeci" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="lblSlika" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnCas" min="-2" max="-2" attributes="0"/>
+              <Component id="lblSlika" pref="356" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnKviz" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnSledeci" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnPrethodni" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnKontrolni" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnCas">
+    <Component class="javax.swing.JButton" name="btnSledeci">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#x427;&#x410;&#x421;"/>
+        <Property name="text" type="java.lang.String" value=" &gt; "/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSledeciActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnKviz">
+    <Component class="javax.swing.JButton" name="btnPrethodni">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#x41a;&#x412;&#x418;&#x417;"/>
+        <Property name="text" type="java.lang.String" value=" &lt; "/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrethodniActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnKontrolni">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x41a;&#x41e;&#x41d;&#x422;&#x420;&#x41e;&#x41b;&#x41d;&#x418;"/>
-      </Properties>
+    <Component class="javax.swing.JLabel" name="lblSlika">
     </Component>
   </SubComponents>
 </Form>
