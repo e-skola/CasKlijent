@@ -27,6 +27,21 @@ public interface IMaterijalServis {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns servisi.Materijal
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "preuzmiMaterijal", targetNamespace = "http://servisi/", className = "servisi.PreuzmiMaterijal")
+    @ResponseWrapper(localName = "preuzmiMaterijalResponse", targetNamespace = "http://servisi/", className = "servisi.PreuzmiMaterijalResponse")
+    @Action(input = "http://servisi/IMaterijalServis/preuzmiMaterijalRequest", output = "http://servisi/IMaterijalServis/preuzmiMaterijalResponse")
+    public Materijal preuzmiMaterijal(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @return
@@ -42,20 +57,5 @@ public interface IMaterijalServis {
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         int arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns servisi.Materijal
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "preuzmiMaterijal", targetNamespace = "http://servisi/", className = "servisi.PreuzmiMaterijal")
-    @ResponseWrapper(localName = "preuzmiMaterijalResponse", targetNamespace = "http://servisi/", className = "servisi.PreuzmiMaterijalResponse")
-    @Action(input = "http://servisi/IMaterijalServis/preuzmiMaterijalRequest", output = "http://servisi/IMaterijalServis/preuzmiMaterijalResponse")
-    public Materijal preuzmiMaterijal(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
 
 }

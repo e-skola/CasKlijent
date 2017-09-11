@@ -1,8 +1,14 @@
 package gui;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.List;
+import javax.swing.ImageIcon;
 import servisi.IMaterijalServis;
 import servisi.Materijal;
+import servisi.MaterijalServisService;
+import utils.Konverter;
 
 /**
  *
@@ -23,9 +29,24 @@ public class CasForm extends javax.swing.JFrame {
 	}
 	
 	public void selektujLekciju(int razred, int lekcija) {
+		servis = new MaterijalServisService().getMaterijalServisPort();
+		materijali = servis.preuzmiMaterijale(razred, lekcija);
+		index = 0;
+		if(materijali.size() > 0)
+			prikaziSliku();
 	}
 	
 	private void prikaziSliku() {
+		try {
+			byte[] slika = materijali.get(index).getSlika();
+			BufferedImage biSlika = Konverter.byteArrayToImage(slika);
+			Image sSlika = biSlika.getScaledInstance(lblSlika.getWidth(),
+													 lblSlika.getHeight(),
+													 Image.SCALE_SMOOTH);
+			lblSlika.setIcon(new ImageIcon(sSlika));
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	/**
@@ -66,7 +87,7 @@ public class CasForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 522, Short.MAX_VALUE)
+                        .addGap(0, 847, Short.MAX_VALUE)
                         .addComponent(btnPrethodni)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSledeci))
@@ -77,7 +98,7 @@ public class CasForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblSlika, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                .addComponent(lblSlika, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSledeci)

@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="lekcija" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="razred" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="slika" type="{http://servisi/}bufferedImage" minOccurs="0"/>
+ *         &lt;element name="slika" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +40,7 @@ public class Materijal {
     protected int id;
     protected int lekcija;
     protected int razred;
-    protected BufferedImage slika;
+    protected byte[] slika;
 
     /**
      * Gets the value of the id property.
@@ -95,10 +95,9 @@ public class Materijal {
      * 
      * @return
      *     possible object is
-     *     {@link BufferedImage }
-     *     
+     *     byte[]
      */
-    public BufferedImage getSlika() {
+    public byte[] getSlika() {
         return slika;
     }
 
@@ -107,10 +106,9 @@ public class Materijal {
      * 
      * @param value
      *     allowed object is
-     *     {@link BufferedImage }
-     *     
+     *     byte[]
      */
-    public void setSlika(BufferedImage value) {
+    public void setSlika(byte[] value) {
         this.slika = value;
     }
 
