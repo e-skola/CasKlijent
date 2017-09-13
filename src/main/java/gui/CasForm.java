@@ -5,9 +5,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.List;
 import javax.swing.ImageIcon;
-import servisi.IMaterijalServis;
+import servisi.CasServisService;
+import servisi.ICasServis;
 import servisi.Materijal;
-import servisi.MaterijalServisService;
 import utils.Konverter;
 
 /**
@@ -17,7 +17,7 @@ import utils.Konverter;
 
 public class CasForm extends javax.swing.JFrame {
 	
-	private IMaterijalServis servis;
+	private ICasServis servis;
 	private List<Materijal> materijali;
 	private int index;
 	
@@ -29,7 +29,7 @@ public class CasForm extends javax.swing.JFrame {
 	}
 	
 	public void selektujLekciju(int razred, int lekcija) {
-		servis = new MaterijalServisService().getMaterijalServisPort();
+		servis = new CasServisService().getCasServisPort();
 		materijali = servis.preuzmiMaterijale(razred, lekcija);
 		index = 0;
 		if(materijali.size() > 0)
