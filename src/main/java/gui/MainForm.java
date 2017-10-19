@@ -1,5 +1,6 @@
 package gui;
 
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -18,9 +19,24 @@ public class MainForm extends javax.swing.JFrame {
 	
 	public void prijavaNaCas(int razred, int lekcija) {
 		CasForm frmCas = new CasForm();
+		frmCas.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frmCas.setVisible(true);
 		frmCas.selektujLekciju(razred, lekcija);
 		setVisible(false);
+	}
+	
+	public void prijavaNaKviz(String ime, String prezime) {
+		KvizForm frmKviz = new KvizForm();
+		frmKviz.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		if(frmKviz.prijava(ime, prezime)) {
+			frmKviz.setVisible(true);
+			setVisible(false);
+			
+			RangListaForm frmRangLista = new RangListaForm();
+			frmRangLista.setVisible(true);
+		} else {
+			JOptionPane.showMessageDialog(null, "Није могуће пријавити се на квиз");
+		}
 	}
 
 	/**
@@ -47,6 +63,11 @@ public class MainForm extends javax.swing.JFrame {
         });
 
         btnKviz.setText("КВИЗ");
+        btnKviz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKvizActionPerformed(evt);
+            }
+        });
 
         btnKontrolni.setText("КОНТРОЛНИ");
 
@@ -83,6 +104,11 @@ public class MainForm extends javax.swing.JFrame {
 		PrijavaCasDialog dlgPrijavaCas = new PrijavaCasDialog(this, true);
 		dlgPrijavaCas.setVisible(true);
     }//GEN-LAST:event_btnCasActionPerformed
+
+    private void btnKvizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKvizActionPerformed
+		PrijavaKvizDialog dlgPrijavaKviz = new PrijavaKvizDialog(this, true);
+		dlgPrijavaKviz.setVisible(true);
+    }//GEN-LAST:event_btnKvizActionPerformed
 
 	/**
 	 * @param args the command line arguments

@@ -1,5 +1,5 @@
 
-package servisi;
+package servis;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CasServisService", targetNamespace = "http://servisi/", wsdlLocation = "http://localhost:5001/Cas?wsdl")
+@WebServiceClient(name = "CasServisService", targetNamespace = "http://servis/", wsdlLocation = "http://localhost:5001/Cas?wsdl")
 public class CasServisService
     extends Service
 {
 
     private final static URL CASSERVISSERVICE_WSDL_LOCATION;
     private final static WebServiceException CASSERVISSERVICE_EXCEPTION;
-    private final static QName CASSERVISSERVICE_QNAME = new QName("http://servisi/", "CasServisService");
+    private final static QName CASSERVISSERVICE_QNAME = new QName("http://servis/", "CasServisService");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class CasServisService
      */
     @WebEndpoint(name = "CasServisPort")
     public ICasServis getCasServisPort() {
-        return super.getPort(new QName("http://servisi/", "CasServisPort"), ICasServis.class);
+        return super.getPort(new QName("http://servis/", "CasServisPort"), ICasServis.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class CasServisService
      */
     @WebEndpoint(name = "CasServisPort")
     public ICasServis getCasServisPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://servisi/", "CasServisPort"), ICasServis.class, features);
+        return super.getPort(new QName("http://servis/", "CasServisPort"), ICasServis.class, features);
     }
 
     private static URL __getWsdlLocation() {

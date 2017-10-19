@@ -1,23 +1,22 @@
 
-package servisi;
+package servis;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for preuzmiMaterijalResponse complex type.
+ * <p>Java class for prijavaTakmicara complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="preuzmiMaterijalResponse">
+ * &lt;complexType name="prijavaTakmicara">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://servisi/}materijal" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://servis/}takmicar" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,36 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "preuzmiMaterijalResponse", propOrder = {
-    "_return"
+@XmlType(name = "prijavaTakmicara", propOrder = {
+    "arg0"
 })
-public class PreuzmiMaterijalResponse {
+public class PrijavaTakmicara {
 
-    @XmlElement(name = "return")
-    protected Materijal _return;
+    protected Takmicar arg0;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
-     *     {@link Materijal }
+     *     {@link Takmicar }
      *     
      */
-    public Materijal getReturn() {
-        return _return;
+    public Takmicar getArg0() {
+        return arg0;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the arg0 property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Materijal }
+     *     {@link Takmicar }
      *     
      */
-    public void setReturn(Materijal value) {
-        this._return = value;
+    public void setArg0(Takmicar value) {
+        this.arg0 = value;
     }
 
 }

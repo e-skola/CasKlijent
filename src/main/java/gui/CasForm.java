@@ -5,9 +5,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.List;
 import javax.swing.ImageIcon;
-import servisi.CasServisService;
-import servisi.ICasServis;
-import servisi.Materijal;
+import servis.CasServisService;
+import servis.ICasServis;
+import servis.Materijal;
 import utils.Konverter;
 
 /**
